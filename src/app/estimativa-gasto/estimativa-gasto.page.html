@@ -1,0 +1,268 @@
+<ion-toolbar>
+    <img src="assets/zezin.png" alt="">
+</ion-toolbar>
+<ion-content>
+    <ion-grid>
+        <ion-card>
+            <ion-list>
+                <ion-card-header class="cabecalho">
+                    <strong>Fontes de Nitrogênio</strong>
+                </ion-card-header>
+                <ion-row>
+                    <ion-col>
+                        Adubo
+                    </ion-col>
+                    <ion-col>
+                        Qtd
+                    </ion-col>
+                    <ion-col>
+                        Valor
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        Uréia
+                    </ion-col>
+                    <ion-col>
+                        {{adubo.ureia}} Kg/ha
+                    </ion-col>
+                    <ion-col>
+                        R$ {{adubo.valor_ureia}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        Sulfato de Amônio
+                    </ion-col>
+                    <ion-col>
+                        {{adubo.suf_amonio}} Kg/ha
+                    </ion-col>
+                    <ion-col>
+                        R$ {{adubo.valor_suf_amonio}}
+                    </ion-col>
+                </ion-row>
+
+            </ion-list>
+        </ion-card>
+        <ion-card>
+            <ion-list>
+                <ion-card-header class="cabecalho">
+                    <strong>Fontes de Fósforo</strong>
+                </ion-card-header>
+                <ion-row>
+                    <ion-col>
+                        Adubo
+                    </ion-col>
+                    <ion-col>
+                        Qtd
+                    </ion-col>
+                    <ion-col>
+                        Valor
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col>
+                        Super Simples
+                    </ion-col>
+                    <ion-col>
+                        {{adubo.super_simples}} Kg/ha
+                    </ion-col>
+                    <ion-col>
+                        R$ {{adubo.valor_super_simples}}
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col>
+                        Fosfato Triplo
+                    </ion-col>
+                    <ion-col>
+                        {{adubo.fosfato_triplo}} Kg/ha
+                    </ion-col>
+                    <ion-col>
+                        R$ {{adubo.valor_fosfato_triplo}}
+                    </ion-col>
+                </ion-row>
+            </ion-list>
+        </ion-card>
+        <ion-card>
+            <ion-list>
+                <ion-card-header class="cabecalho">
+                    <strong>Fontes de Potássio</strong>
+                </ion-card-header>
+                <ion-row>
+                    <ion-col>
+                        Adubo
+                    </ion-col>
+                    <ion-col>
+                        Qtd
+                    </ion-col>
+                    <ion-col>
+                        Valor
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        Sulfato de Potássio
+                    </ion-col>
+                    <ion-col>
+                        {{adubo.sulfato_potassio}} Kg/ha
+                    </ion-col>
+                    <ion-col>
+                        R$ {{adubo.valor_sulfato_potassio}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        Cloreto de Potássio
+                    </ion-col>
+                    <ion-col>
+                        {{adubo.cloreto_potassio}} Kg/ha
+                    </ion-col>
+                    <ion-col>
+                        R$ {{adubo.valor_cloreto_potassio}}
+                    </ion-col>
+                </ion-row>
+            </ion-list>
+        </ion-card>
+        <ion-card>
+            <ion-list>
+                <ion-card-header class="cabecalho">
+                    <strong>Gasto Final</strong>
+                </ion-card-header>
+                <ion-row>
+                    <ion-col>
+                        Produtos
+                    </ion-col>
+                    <ion-col>
+                        Valor
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        {{gasto_final.nome_adubo}}
+                    </ion-col>
+                    <ion-col>
+                        R$ {{gasto_final.gasto_adubo}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        {{gasto_final.nome_adubo_02}}
+                    </ion-col>
+                    <ion-col>
+                        R$ {{gasto_final.gasto_adubo_02}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        {{gasto_final.nome_adubo_03}}
+                    </ion-col>
+                    <ion-col>
+                        R$ {{gasto_final.gasto_adubo_03}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        Sementes
+                    </ion-col>
+                    <ion-col>
+                        R$ {{gasto_final.sementes}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        Calcário
+                    </ion-col>
+                    <ion-col>
+                        R$ {{gasto_final.calcario}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <strong>Total</strong>
+                    </ion-col>
+                    <ion-col>
+                        <strong>R$ {{gasto_final.gasto_total}}</strong>
+                    </ion-col>
+                </ion-row>
+            </ion-list>
+        </ion-card>
+        <ion-card>
+            <ion-list>
+                <ion-card-header class="cabecalho">
+                    <strong>Expectativa</strong>
+                </ion-card-header>
+                <ion-row>
+                    <ion-col>
+                        Colheita
+                    </ion-col>
+                    <ion-col>
+                        Valor
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        {{gasto_final.qtd_cultura}} Kg/ha
+                    </ion-col>
+                    <ion-col>
+                        R$ {{gasto_final.venda}}
+                    </ion-col>
+                </ion-row>
+            </ion-list>
+        </ion-card>
+        <ion-card>
+            <ion-list>
+                <ion-card-header id="lucro">
+                    <strong>Lucratividade</strong>
+                </ion-card-header>
+                <ion-row>
+                    <ion-col>
+                        Preço de venda
+                    </ion-col>
+                    <ion-col>
+                        R$ {{gasto_final.venda}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        Gasto total
+                    </ion-col>
+                    <ion-col>
+                        R$ {{gasto_final.gasto_total}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <strong>Lucro</strong>
+                    </ion-col>
+                    <ion-col>
+                        R$ {{gasto_final.lucro}}
+                    </ion-col>
+                </ion-row>
+            </ion-list>
+        </ion-card>
+    </ion-grid>
+    <ion-item>
+        <header>Sugestão de outra cultura ?</header>
+    </ion-item>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label>Sim</ion-label>
+                    <ion-checkbox color="success" (click)="proximo()" slot="start"></ion-checkbox>
+                </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-label>Não</ion-label>
+                    <ion-checkbox color="success" (click)="home()" slot="start"></ion-checkbox>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
+<ion-item class="a"></ion-item>

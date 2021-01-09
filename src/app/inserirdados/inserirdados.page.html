@@ -1,0 +1,40 @@
+<ion-toolbar>
+    <img src="assets/zezin.png" alt="">
+</ion-toolbar>
+
+<ion-content class="fundo">
+    <h1 class="n"><strong>Insira os dados</strong></h1>
+    <ion-item class="style">
+        <ion-label class="cor"><strong>PH:</strong> </ion-label>
+        <ion-input required type="number" [(ngModel)]="dados.ph"></ion-input>
+    </ion-item>
+    <ion-item class="style">
+        <ion-label class="cor"><strong>Argila: </strong></ion-label>
+        <ion-input required type="number" [(ngModel)]="dados.argila"></ion-input>
+    </ion-item>
+    <ion-item class="style">
+        <ion-label class="cor"><strong>Alumínio (Al):</strong> </ion-label>
+        <ion-input required type="number" [(ngModel)]="dados.aluminio"></ion-input>
+    </ion-item>
+    <ion-item class="style">
+        <ion-label class="cor"><strong>Cálcio (Ca): </strong> </ion-label>
+        <ion-input required type="number" [(ngModel)]="dados.calcio"></ion-input>
+    </ion-item>
+
+    <ion-item class="style">
+        <ion-label class="cor"><strong> Magnésio (Mg): </strong></ion-label>
+        <ion-input required type="number" [(ngModel)]="dados.magnesio"></ion-input>
+    </ion-item>
+    <ion-item class="style">
+        <ion-label class="cor"><strong> Potássio (K): </strong></ion-label>
+        <ion-input required type="number" [(ngModel)]="dados.potassio"></ion-input>
+    </ion-item>
+    <ion-item class="style">
+        <ion-label class="cor"><strong> Fósforo (P): </strong></ion-label>
+        <ion-input required type="number" [(ngModel)]="dados.fosforo"></ion-input>
+    </ion-item>
+    <ion-button id="avancar" size="large" (click)="inserir()">Avançar</ion-button>
+</ion-content>
+
+
+<ion-item class="a"></ion-item>

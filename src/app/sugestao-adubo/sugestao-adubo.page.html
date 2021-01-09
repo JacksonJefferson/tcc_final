@@ -1,0 +1,136 @@
+<ion-header>
+  <ion-toolbar>
+    <img src="assets/zezin.png" alt="">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="ion-padding">
+    <p>Para alcançar uma melhor produtividade com a cultura desejada você vai precisar adubar o solo.</p>
+  </div>
+  <ion-grid>
+    <ion-card>
+      <ion-list>
+        <ion-card-header class="cabecalho">
+          <strong>Plantio</strong>
+        </ion-card-header>
+        <ion-row>
+          <ion-col>
+            Nutriente
+          </ion-col>
+          <ion-col>
+            Quantidade
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Nitrogênio
+          </ion-col>
+          <ion-col>
+            {{plantio.nitrogenio}} Kg/ha
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Potássio
+          </ion-col>
+          <ion-col>
+            {{plantio.potassio}} Kg/ha
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Fósforo
+          </ion-col>
+          <ion-col>
+            {{plantio.fosforo}} Kg/ha
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      <ion-list>
+        <ion-card-header class="cabecalho">
+          <strong>Cobertura</strong>
+        </ion-card-header>
+        <ion-row>
+          <ion-col>
+            Nutriente
+          </ion-col>
+          <ion-col>
+            Quantidade
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Nitrogênio
+          </ion-col>
+          <ion-col>
+            {{cobertura.nitrogenio}} Kg/ha
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Potássio
+          </ion-col>
+          <ion-col>
+            {{cobertura.potassio}} Kg/ha
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Fósforo
+          </ion-col>
+          <ion-col>
+            {{cobertura.fosforo}} Kg/ha
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      <ion-list>
+        <ion-card-header class="cabecalho">
+          <strong>Adubação Total</strong>
+        </ion-card-header>
+        <ion-row>
+          <ion-col>
+            Nutriente
+          </ion-col>
+          <ion-col>
+            Quantidade
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Nitrogênio
+          </ion-col>
+          <ion-col>
+            {{total_adubo.nitrogenio}} Kg/ha
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Potássio
+          </ion-col>
+          <ion-col>
+            {{total_adubo.potassio}} Kg/ha
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Fósforo
+          </ion-col>
+          <ion-col>
+            {{total_adubo.fosforo}} Kg/ha
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-card>
+  </ion-grid>
+
+  <ion-button id="avancar" size="large" (click)="proximo()">Avançar</ion-button>
+</ion-content>
+
+
+<ion-item class="a"></ion-item>

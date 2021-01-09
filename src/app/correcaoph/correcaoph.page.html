@@ -1,0 +1,30 @@
+<ion-toolbar>
+  <img src="assets/zezin.png" alt="">
+</ion-toolbar>
+
+<ion-content>
+  <div class="ion-padding">
+    <p *ngIf="nc > 0">"De acordo com as informações inseridas detectamos que o ph do seu solo não está adequado para o
+      plantio,
+      para corrigi-lo você terá que aplicar {{nc}} t/h de calcario."</p>
+    <p *ngIf="nc==0"> Seu solo está com o ph ideal para o plantio</p>
+  </div>
+  <div>
+    <ion-item>
+      <p>Nos informe a cultura que deseja plantar</p>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cultura</ion-label>
+      <ion-select color= "success" placeholder="Seleciona uma" [(ngModel)]="cultura">
+        <ion-select-option value="milho">Milho</ion-select-option>
+        <ion-select-option value="feijao">Feijão</ion-select-option>
+        <ion-select-option value="soja">Soja</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <ion-button id="avancar" size="large" (click)="escolha_cultura()">Avançar</ion-button>
+</ion-content>
+
+
+<ion-item class="a">
+</ion-item>
