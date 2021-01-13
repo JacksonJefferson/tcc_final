@@ -3,42 +3,6 @@
 </ion-toolbar>
 
 <ion-content>
-  <ion-item>
-    <h4>Você possui algum desses adubos?</h4>
-  </ion-item>
-  <div>
-    <ion-card id="primeiro">
-      <ion-list>
-        <ion-card-header>
-          <strong>Adubos disponíveis</strong>
-        </ion-card-header>
-        <ion-item>
-          <ion-label>Uréia</ion-label>
-          <ion-checkbox color="success" slot="start"></ion-checkbox>
-        </ion-item>
-        <ion-item>
-          <ion-label>Sulfato de Amônio</ion-label>
-          <ion-checkbox color="success" slot="start"></ion-checkbox>
-        </ion-item>
-        <ion-item>
-          <ion-label>Super Simples</ion-label>
-          <ion-checkbox color="success" slot="start"></ion-checkbox>
-        </ion-item>
-        <ion-item>
-          <ion-label>Fosfato Triplo</ion-label>
-          <ion-checkbox color="success" slot="start"></ion-checkbox>
-        </ion-item>
-        <ion-item>
-          <ion-label>Sulfato de Potássio</ion-label>
-          <ion-checkbox color="success" slot="start"></ion-checkbox>
-        </ion-item>
-        <ion-item>
-          <ion-label>Cloreto de Potássio</ion-label>
-          <ion-checkbox color="success" slot="start"></ion-checkbox>
-        </ion-item>
-      </ion-list>
-    </ion-card>
-  </div>
   <ion-card>
     <div>
       <ion-item>
@@ -49,7 +13,6 @@
         <ion-input required type="number" [(ngModel)]="valor"></ion-input>
       </ion-item>
     </div>
-
     <div>
       <ion-item>
         <h5>Qual o valor do kg que você deseja vender?</h5>
@@ -57,6 +20,42 @@
       <ion-item>
         <ion-label>Valor: R$</ion-label>
         <ion-input required type="number" [(ngModel)]="valor_venda"></ion-input>
+      </ion-item>
+    </div>
+    <div>
+      <ion-item>
+        <h5>Qual o valor do kg da fonte de Nitrogenio?</h5>
+      </ion-item>
+      <ion-item>
+        <ion-label>Valor: R$</ion-label>
+        <ion-input required type="number" [(ngModel)]="valor_nitro"></ion-input>
+      </ion-item>
+    </div>
+    <div>
+      <ion-item>
+        <h5>Qual o valor do kg da fonte de Fósforo?</h5>
+      </ion-item>
+      <ion-item>
+        <ion-label>Valor: R$</ion-label>
+        <ion-input required type="number" [(ngModel)]="valor_fosf"></ion-input>
+      </ion-item>
+    </div>
+    <div>
+      <ion-item>
+        <h5>Qual o valor do kg da Fonte de Potássio?</h5>
+      </ion-item>
+      <ion-item>
+        <ion-label>Valor: R$</ion-label>
+        <ion-input required type="number" [(ngModel)]="valor_pota"></ion-input>
+      </ion-item>
+    </div>
+    <div>
+      <ion-item>
+        <h5>Qual o valor do tonelada de Calcário?</h5>
+      </ion-item>
+      <ion-item>
+        <ion-label>Valor: R$</ion-label>
+        <ion-input required type="number" [(ngModel)]="valor_calc"></ion-input>
       </ion-item>
     </div>
   </ion-card>

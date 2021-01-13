@@ -11,6 +11,10 @@ import { Router } from '@angular/router';
 export class AdubacaoPage implements OnInit {
   valor: number;
   valor_venda:number;
+  valor_nitro: number;
+  valor_fosf: number;
+  valor_pota: number;
+  valor_calc: number;
 
   constructor(private calculadorService: CalculadorService, private router: Router) { 
  

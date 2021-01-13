@@ -12,18 +12,23 @@ export class CalculadorService {
   nc: number;
   adubo: { fosforo: number, potassio: number, nitrogenio: number };
   dados: { argila: number, aluminio: number, ph: number, magnesio: number, calcio: number, t: number, T: number, potassio: number, fosforo: number };
-  valor_adubo: {
-    ureia: number, valor_ureia: number, suf_amonio: number, valor_suf_amonio: number,
-    super_simples: number, valor_super_simples: number, fosfato_triplo: number, valor_fosfato_triplo: number,
-    sulfato_potassio: number, valor_sulfato_potassio: number, cloreto_potassio: number, valor_cloreto_potassio: number
-  };
-  valor_final: { gasto_adubo: number, nome_adubo: string, gasto_adubo_02: number, nome_adubo_02: string, gasto_adubo_03: number, nome_adubo_03: string,
+  valor_final: { valor_nitro: number, nome_nitro: string, valor_fosf: number, nome_fosf: string, valor_pota: number, nome_pota: string,
     sementes: number, venda: number, gasto_total: number,
     calcario:number, nome_cultura: string, qtd_cultura:number, lucro:number};
   
+    
+  
   valor_venda: number;
   valor_sementes: number;
+  valor_calcario: number;
   qtd_cultura:number;
+  valor_nitro: number;
+  valor_fosf: number;
+  valor_pota: number;
+  valor_calc: number;
+  nome_nitro: string;
+  nome_fosf: string;
+  nome_pota: string;
 
   ;
 
@@ -45,30 +50,20 @@ export class CalculadorService {
       potassio: null,
       fosforo: null
     };
-    this.valor_adubo = {
-      ureia: null,
-      valor_ureia: null,
-      suf_amonio: null,
-      valor_suf_amonio: null,
-      super_simples: null,
-      valor_super_simples: null,
-      fosfato_triplo: null,
-      valor_fosfato_triplo: null,
-      sulfato_potassio: null,
-      valor_sulfato_potassio: null,
-      cloreto_potassio: null,
-      valor_cloreto_potassio: null,
-    }
     this.valor_sementes = null;
     this.valor_venda = null;
+    this.valor_nitro = null;
+    this.valor_fosf = null;
+    this.valor_pota =null;
+    this.valor_calc = null;
    
     this.valor_final = { 
-      gasto_adubo: null,
-      nome_adubo: "",
-      gasto_adubo_02: null,
-      nome_adubo_02: "",
-      gasto_adubo_03: null,
-      nome_adubo_03: "",
+      valor_nitro: null,
+      nome_nitro: "",
+      valor_fosf: null,
+      nome_fosf: "",
+      valor_pota: null,
+      nome_pota: "",
       sementes: null,
       venda: null,
       gasto_total: null,
@@ -187,22 +182,8 @@ export class CalculadorService {
     };
     return this.adubo
   }
-  sugestao_adubo(nitrogenio, fosforo, potassio) {
-    this.valor_adubo.ureia = parseFloat((nitrogenio / 0.45).toFixed(2)),
-      this.valor_adubo.valor_ureia = parseFloat((this.valor_adubo.ureia * 3.06).toFixed(2)),
-      this.valor_adubo.suf_amonio = parseFloat((nitrogenio / 0.21).toFixed(2)),
-      this.valor_adubo.valor_suf_amonio = parseFloat((this.valor_adubo.ureia * 2.58).toFixed(2)),
-      this.valor_adubo.super_simples = parseFloat((fosforo / 0.18).toFixed(2)),
-      this.valor_adubo.valor_super_simples = parseFloat((this.valor_adubo.super_simples * 2.4).toFixed(2)),
-      this.valor_adubo.fosfato_triplo = parseFloat((fosforo / 0.42).toFixed(2)),
-      this.valor_adubo.valor_fosfato_triplo = parseFloat((this.valor_adubo.fosfato_triplo * 18.2).toFixed(2)),
-      this.valor_adubo.sulfato_potassio = parseFloat((potassio / 0.52).toFixed(2)),
-      this.valor_adubo.valor_sulfato_potassio = parseFloat((this.valor_adubo.sulfato_potassio * 12.64).toFixed(2)),
-      this.valor_adubo.cloreto_potassio = parseFloat((potassio / 0.60).toFixed(2)),
-      this.valor_adubo.valor_cloreto_potassio = parseFloat((this.valor_adubo.cloreto_potassio * 10.66).toFixed(2))
-    return this.valor_adubo
 
-  }
+
   
 
   cultura_escolhida(cultura_enviada){
@@ -224,44 +205,28 @@ export class CalculadorService {
       this.valor_venda = valor_venda*3000
       this.qtd_cultura = 3000
     };
+    this.valor_nitro = this.valor_nitro
+    this.valor_fosf = this.valor_fosf
+    this.valor_pota= this.valor_pota
+    this.valor_calc= this.valor_calc
   }
+
+
   gasto_final() {
-    if (this.valor_adubo.valor_ureia < this.valor_adubo.valor_suf_amonio) {
-      this.valor_final.gasto_adubo = this.valor_adubo.valor_ureia
-      this.valor_final.nome_adubo = "Uréia"
-    }
-    if (this.valor_adubo.valor_ureia >= this.valor_adubo.valor_suf_amonio) {
-      this.valor_final.gasto_adubo = this.valor_adubo.valor_suf_amonio
-      this.valor_final.nome_adubo = "Sulfato de Amônio"
-    }
-    if (this.valor_adubo.valor_super_simples < this.valor_adubo.valor_fosfato_triplo) {
-      this.valor_final.gasto_adubo_02 = this.valor_adubo.valor_super_simples
-      this.valor_final.nome_adubo_02 = "Super Simples"
-    }
-    if (this.valor_adubo.valor_super_simples >= this.valor_adubo.valor_fosfato_triplo) {
-      this.valor_final.gasto_adubo_02 = this.valor_adubo.valor_fosfato_triplo
-      this.valor_final.nome_adubo_02 = "Fosfato triplo"
-    }
-    if (this.valor_adubo.valor_sulfato_potassio < this.valor_adubo.valor_cloreto_potassio) {
-      this.valor_final.gasto_adubo_03 = this.valor_adubo.valor_sulfato_potassio
-      this.valor_final.nome_adubo_03 = "Sulfato de Potássio"
-    }
-    if (this.valor_adubo.valor_sulfato_potassio >= this.valor_adubo.valor_cloreto_potassio) {
-      this.valor_final.gasto_adubo_03 = this.valor_adubo.valor_cloreto_potassio
-      this.valor_final.nome_adubo_03 = "Cloreto de Potássio"
-    }
-    
+    this.valor_final.valor_nitro = this.valor_nitro
+    this.valor_final.nome_nitro = this.nome_nitro
+    this.valor_final.nome_fosf = this.nome_fosf
+    this.valor_final.nome_pota = this.nome_pota
     this.valor_final.sementes = this.valor_sementes
     this.valor_final.venda = this.valor_venda
     this.valor_final.nome_cultura = this.cultura
     this.valor_final.qtd_cultura = this.qtd_cultura
-    this.valor_final.calcario = (this.nc*1000)*2
+    this.valor_final.calcario = this.nc*this.valor_calcario
     
-    this.valor_final.gasto_total = parseFloat((this.valor_final.gasto_adubo + this.valor_final.gasto_adubo_02 + this.valor_final.gasto_adubo_03 + this.valor_sementes + this.valor_final.calcario).toFixed(2))
+    this.valor_final.gasto_total = parseFloat((this.valor_final.valor_nitro + this.valor_final.valor_fosf +this.valor_final.valor_pota + this.valor_sementes + this.valor_final.calcario).toFixed(2))
     this.valor_final.lucro = this.valor_final.venda - this.valor_final.gasto_total
     return this.valor_final
   }
-
 }
 
 
