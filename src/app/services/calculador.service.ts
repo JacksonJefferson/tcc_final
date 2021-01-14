@@ -29,6 +29,9 @@ export class CalculadorService {
   nome_nitro: string;
   nome_fosf: string;
   nome_pota: string;
+  total_nitrogenio: number;
+  total_fosforo: number;
+  total_potassio: number;
 
   ;
 
@@ -183,9 +186,6 @@ export class CalculadorService {
     return this.adubo
   }
 
-
-  
-
   cultura_escolhida(cultura_enviada){
     this.cultura = cultura_enviada
   }
@@ -205,23 +205,33 @@ export class CalculadorService {
       this.valor_venda = valor_venda*3000
       this.qtd_cultura = 3000
     };
-    this.valor_nitro = this.valor_nitro
-    this.valor_fosf = this.valor_fosf
-    this.valor_pota= this.valor_pota
-    this.valor_calc= this.valor_calc
+    
+  }
+  valor_nutrientes(valor_nitro, valor_fosf, valor_pota, valor_calc){
+    this.valor_nitro = valor_nitro
+    this.valor_fosf = valor_fosf
+    this.valor_pota = valor_pota
+    this.valor_calc = valor_calc
+  }
+  sugestao_adubo(total_nitrogenio, total_fosforo, total_potassio){
+    this.total_nitrogenio = total_nitrogenio
+    this.total_fosforo = total_fosforo
+    this.total_potassio = total_potassio
+
   }
 
-
   gasto_final() {
-    this.valor_final.valor_nitro = this.valor_nitro
-    this.valor_final.nome_nitro = this.nome_nitro
-    this.valor_final.nome_fosf = this.nome_fosf
-    this.valor_final.nome_pota = this.nome_pota
+    this.valor_final.valor_nitro = this.valor_nitro*this.total_nitrogenio
+    this.valor_final.valor_fosf = this.valor_fosf*this.total_fosforo
+    this.valor_final.valor_pota = this.valor_pota*this.total_potassio
+    this.valor_final.nome_nitro = "Fonte de Nitrogênio"
+    this.valor_final.nome_fosf = "Fonte de Fósforo"
+    this.valor_final.nome_pota = "Fonte de Potássio"
     this.valor_final.sementes = this.valor_sementes
     this.valor_final.venda = this.valor_venda
     this.valor_final.nome_cultura = this.cultura
     this.valor_final.qtd_cultura = this.qtd_cultura
-    this.valor_final.calcario = this.nc*this.valor_calcario
+    this.valor_final.calcario = this.nc*this.valor_calc
     
     this.valor_final.gasto_total = parseFloat((this.valor_final.valor_nitro + this.valor_final.valor_fosf +this.valor_final.valor_pota + this.valor_sementes + this.valor_final.calcario).toFixed(2))
     this.valor_final.lucro = this.valor_final.venda - this.valor_final.gasto_total

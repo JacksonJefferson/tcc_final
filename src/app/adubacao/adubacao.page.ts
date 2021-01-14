@@ -26,6 +26,7 @@ export class AdubacaoPage implements OnInit {
   proximo(){
     
     this.calculadorService.venda_sementes(this.valor, this.valor_venda);
+    this.calculadorService.valor_nutrientes(this.valor_nitro, this.valor_fosf, this.valor_pota, this.valor_calc);
     this.calculadorService.gasto_final();
     this.router.navigateByUrl('estimativa-gasto');
     }

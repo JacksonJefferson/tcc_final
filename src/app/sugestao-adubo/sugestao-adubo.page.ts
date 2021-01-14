@@ -32,7 +32,7 @@ export class SugestaoAduboPage implements OnInit {
   ngOnInit() {
   }
   proximo() {
-  //  this.calculadorService.sugestao_adubo(this.total_adubo.nitrogenio, this.total_adubo.fosforo, this.total_adubo.potassio);
+    this.calculadorService.sugestao_adubo(this.total_adubo.nitrogenio, this.total_adubo.fosforo, this.total_adubo.potassio);
     this.router.navigateByUrl('adubacao');
     
   }
