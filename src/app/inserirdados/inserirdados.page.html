@@ -1,6 +1,8 @@
-<ion-toolbar>
-    <img src="assets/zezin.png" alt="">
-</ion-toolbar>
+<ion-header>
+    <ion-toolbar>
+      <img src="assets/logo 3.png" alt="">
+    </ion-toolbar>
+</ion-header>
 
 <ion-content class="fundo">
     <h1 class="n"><strong>Insira os dados</strong></h1>
@@ -33,7 +35,7 @@
         <ion-label class="cor"><strong> Fósforo (P): </strong></ion-label>
         <ion-input required type="number" [(ngModel)]="dados.fosforo"></ion-input>
     </ion-item>
-    <ion-button id="avancar" size="large" (click)="inserir()">Avançar</ion-button>
+    <ion-button id="avancar" size="large" (click)="inserir()"> <strong>Avançar</strong></ion-button>
 </ion-content>
 
 
